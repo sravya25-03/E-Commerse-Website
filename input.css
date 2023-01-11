@@ -1,0 +1,301 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.brandName{
+    font-family: 'Great Vibes', cursive;
+    font-size: x-large;
+}
+
+.searchBar {
+    width: 700px;
+    height :35px;
+    background-color:#2f3a4a;
+    border-color: #646d78 ;
+    border-width: 2.5px;
+}
+
+@media(max-width-576px){
+    .searchBar{
+        width: 300px;
+    }
+}
+
+.nav-ext{
+    height: 40px;
+}
+
+.nav-ext a.active{
+    background-color: #646d78;
+}
+
+.open{
+    transform: rotate(90deg);
+    transform:translateY(0px);
+}
+
+/* dropdowns */
+
+.dropdown-menu{
+    width: 700px;
+    left: -5px;
+    top: calc(100% + .15rem);
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out , transform 150ms ease-in-out;
+    pointer-events: none;
+    box-shadow: 1px 3px 6px 1px rgb(0,0,0,0.1);
+}
+
+.dropdown-menu-profile{
+    width: 200px;
+    height: 50px;
+    left: -5px;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out , transform 150ms ease-in-out;
+    pointer-events: none;
+    box-shadow: 1px 3px 6px 1px rgb(0,0,0,0.1);
+}
+
+.dropdown.active > .link + .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto ;
+    transform: translateY(0px);
+}
+
+.dropdown.active > .link + .dropdown-menu-profile {
+    opacity: 1;
+    pointer-events: auto ;
+    transform: translateY(0px);
+}
+
+
+.dropdown.active > .link{
+    font: bold;
+}
+.link:hover{
+    font:bold;
+}
+
+.firstColumn{
+    width: 300px;
+}
+
+/* hamburger */
+
+.dropdown-menu-ham{
+    height: 100vh;
+    width: 350px;
+    z-index: 99 ;
+    transform: translateX(-100%);
+    transition : 150ms ease-in-out , transform 150ms ease-in-out;
+    box-shadow: 1px 3px 6px 1px rgb(0,0,0,0.1);
+}
+
+.dropdown-menu-ham.active{
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* cart */
+.cart{
+    width:100vw;
+    height:100vh;
+    overflow: auto;
+    transition: hidden 400ms ease-in-out , transform 400ms ease-in-out ;
+    z-index: 100;
+}
+
+.cart.hidden{
+    transform: translateY(-30px);
+}
+
+.borderColor{
+    border-color:#cdbc88 ;
+    border-width: 2px;
+}
+
+.amberColor{
+    background-color: #facc15;
+}
+
+.amberColor:hover{
+    background-color: #eab308;
+}
+
+
+
+/* carousel */
+
+.pictures{
+    height: 500px;
+    width: 100%;
+}
+
+.collections{
+    font-family: 'Teko', sans-serif;
+}
+
+.shopNow:hover{
+    background-color: #f97316;
+    border: transparent;
+}
+
+/* topPick */
+
+.topPicks{
+    font-family: 'Prosto One', cursive;
+}
+
+.jackets{
+    height: 300px;
+    width:200px;
+}
+
+.brand{
+    height: 50px;
+    width: 200px;
+}
+
+.outlineTopPicks{
+    padding: 10px;
+    background-image: linear-gradient(to bottom right , #0891b2, white,#fdba74,#fdba74 );
+}
+
+
+.gadgets{
+    height: 146px;
+    margin-bottom: 4px;
+    width: 380px;
+   
+}
+
+.earings{
+    height: 150px;
+    width: 188px;
+    margin-right: 4px;
+
+}
+.shoes{
+    height: 150px;
+    width: 188px;
+    margin-left: 2px;
+}
+
+.offers{
+    font-family: 'PT Serif', serif;
+}
+
+
+/* cards */
+
+.cardImage{
+    height: 250px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.wishSymbol{
+    width: 35px;
+}
+
+/* newCustomer */
+
+.newCustomer{
+    text-decoration: underline;
+}
+
+.newCustomer:hover{
+    color: #14678d;
+}
+
+.newUser{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* aloneImage */
+
+.aloneImage{
+    height: 500px;
+
+}
+.btnFont1{
+    font-family: 'Moon Dance', cursive;
+    
+}
+
+.btnFont2{
+    font-family: 'Acme', sans-serif;
+ 
+}
+
+.shopNow2{
+    width: 150px;
+}
+/* footer */
+
+.webFooter{
+    height: 300px;
+    padding-top: 50px;
+    padding-left: 70px;
+}
+
+.copyRight{
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.googlePlay{
+    width: 200px;
+    height: 70px;
+}
+.apps{
+    height: 45px;
+    width: 150px;
+    
+}
+
+/* login */
+
+.loginPage{
+    background-image: linear-gradient( #fee2e2,#fee2e2,#fecaca,#fecaca,#fca5a5 ,#fca5a5);
+    width:100vw;
+    height: 100vh;
+    overflow: auto;
+
+}
+
+.signInForm{
+    width: 350px;
+    height: 450px;
+    margin-top: 100px;
+}
+
+.signFont{
+    font-family: 'Prosto One', cursive;
+}
+
+.loginForm{
+    width: 350px;
+    height: 350px;
+    margin-top: 100px;
+}
+
+/* women.html */
+
+.mainImage{
+    height: 400px;
+    width: 400px;
+}
+
+.img1{
+    height: 90px;
+    width: 90px;
+}
+
+
+
+
+
+

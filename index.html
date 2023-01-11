@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlayFit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&family=Noto+Serif&family=Oswald&family=PT+Serif&family=Prosto+One&family=Rubik+Spray+Paint&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="relative ">
+
+
+    <!-- navbar -->
+
+    <div class="flex flex-row space-x-20 h-24 shadow-lg sticky top-0 z-40 bg-white ">
+        <img src="images/logo.svg" alt="" class="pl-20 h-22 ">
+        <h2 class="brandName pt-8 font-bold tracking-wide">SlayFit</h2>
+        <div class="">
+            <form action="" class="search-form ">
+                <input type="search" placeholder="Search" class="searchBar focus:ring-2 focus:bg-white focus:text-gray-800 focus:outline-none focus:ring-gray-800 focus:border-transparent pl-5 text-1xl rounded-full border-2 border-black text-stone-900 border-opacity-75 mt-7 w-full" >
+            </form>
+        </div>
+
+        <div class="space-x-10 flex flex-row mt-8 icons place-items-left icons ">
+            <a href="index.html" class="hover:bg-gray-300 hover:rounded-md hover:h-6 hidden md:block  " >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+                    <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+                </svg>
+            </a>
+
+            <div class="dropdown relative z-40" data-dropdown>
+
+                <button class="link hover:bg-gray-300 hover:rounded-md hover:h-6 hidden md:block" data-dropdown-button>
+                    <a href="login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="link w-6 h-6" data-dropdown-button>
+                            <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </button>
+                <div class="dropdown-menu-profile z-50 absolute bg-white p-1 opacity-0 rounded-md top-9 border " >
+                    <div class="flex flex-row justify-around">
+                        <button class="border-amber-600 bg-amber-400 hover:bg-amber-500 py-1 px-4 rounded-md border mt-1  ">
+                            <a href="signIn.html">Sign In</a>
+                        </button>
+                        <button class="border-amber-600 bg-amber-400 hover:bg-amber-500 py-1 px-4 rounded-md border mt-1">
+                            <a href="login.html">Login</a>
+                        </button>
+                    </div> 
+                </div>
+            </div>
+
+            <a href="" class="hover:bg-gray-300 hover:rounded-md hover:h-6 hidden md:block">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ">
+                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                </svg>
+            </a>
+            <div class="">
+
+                <button class="hover:bg-gray-300 hover:rounded-md hover:h-6 hidden md:block " onclick="showCart()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ">
+                        <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                    </svg>
+                </button>
+                
+                <!-- cart -->
+
+                <div class=" cart flex flex-col absolute top-0 left-0 space-y-5 bg-gray-200 hidden " id="cartSlide">
+                    <div class="mb-10">
+                        <button class="absolute right-6 top-3 bg-gray-300 border border-black hover:bg-gray-400 rounded-full" onclick="closeCart()">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>     
+                        </button>
+                    </div>
+
+                    <div class="border-2 border-yellow-500 rounded m-10  ">
+                        <h1 class="text-2xl p-10 font-semibold bg-gray-800 text-white ">One Step Away To Order !!</h1>
+                    </div>
+                    <div id="trail" class=" flex flex-col space-y-4 mb-10">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- nav-extension -->
+
+    <div class="nav-ext flex flex-row space-x-20  bg-gray-800 shadow-lg w-full sticky top-24 z-10 ">
+
+        <div class=" dropdown-ham ">
+
+            <button id="openButton" class=" h-7 bg-white border-2 border-zinc-300 mt-1.5 ml-3 " >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+
+            <div id="slide-ham" class="dropdown-menu-ham absolute top-0 left-0 z-40 border flex flex-col ">
+                <div class="flex flex-row relative bg-stone-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bg-white rounded-full w-6 h-6 my-auto ml-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>     
+                    <h1 class="text-white text-2xl px-3 py-10">Hello There !!</h1>
+                    <button id="closeButton" class=" mr-2 absolute right-1 top-1 " >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="bg-white hover:bg-gray-300 rounded-full w-6 h-6 ">
+                            <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                          </svg>
+                    </button>
+                </div>
+                
+                <div class="relative flex flex-col pl-5 pt-5 space-y-3 bg-white h-full">
+
+                    <h1 class="text-bold text-2xl">Your Profile</h1>
+
+                    <a href="index.html" class="hover:font-semibold ">Home</a>
+                    <a href="signIn.html" class="hover:font-semibold ">Your Account</a>
+                    <a href="" class="hover:font-semibold ">WishList</a>
+                    <a href="" class="hover:font-semibold ">Your Orders</a> 
+
+                    <hr class="">
+                    <h1 class="text-bold text-2xl">Shop By Categories</h1>
+                    <a href="" class="hover:font-semibold ">Mobiles and Computers</a>
+                    <a href="women.html" class="hover:font-semibold ">Men's Fashion</a>
+                    <a href="women.html" class="hover:font-semibold ">Women's Fashion</a>
+                    <a href="" class="hover:font-semibold ">Electronics</a>
+
+                    <hr class="">
+                    <h1 class="text-bold text-2xl">Help & Settings</h1>
+                    <a href="index.html" class="hover:font-semibold ">Customer Service</a>
+                    
+
+
+                </div>
+                
+            </div>
+
+        </div>
+
+ 
+
+
+        <div class="space-x-20 text-white font-light mt-1 flex flex-row">
+
+            <!-- men -->
+
+            <div class="dropdown relative" data-dropdown>
+                <button class="link hover:font-bold hover:text-cyan-400" data-dropdown-button>Men</button>
+                <div class="dropdown-menu absolute bg-white rounded-md flex flex-row text-black py-5 px-10 opacity-0 ">
+
+                    <!-- first column -->
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-cyan-400">Indian & Fusion Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtas</a></li>
+                                <li> <a href="women.html" class="hover:font-semibold">Kurtis, Tunics & tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Sarees</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Ethnic Wear</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Leggings & Churdidars</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skirts & Palazzos</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dress Materials</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Lehenga Cholis</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dupattas & Shawls</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-cyan-400"><a href="">Belts, Scarves & More</a> </li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- second column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-cyan-400">Western Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Dresses</a></li>
+                                <li> <a href="women.html" class="hover:font-semibold">Tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Tshirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jeans</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Trousers & Capris</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Co-ords</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Playsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jumpsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shrugs</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sweaters & Sweatshirtd</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets & Coats</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-3" >
+                            <ul>
+                                <li class="font-semibold text-cyan-400 "><a href="">Blazers & Waidtcoats</a> </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- third column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-cyan-400">Footwear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Flats</a></li>
+                                <li><a href="women.html"class="hover:font-semibold">Casyal Shoes</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Heels</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Boots</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sports Shoes & Floaters</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-cyan-400">Beauty and Personal Care</li>
+                                <li><a href="women.html" class="hover:font-semibold">Makeup </a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skincare</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Premium Beauty</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">LIpsticks</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Fragrances</a></li>
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            
+
+            <!-- women -->
+            <div class="dropdown relative" data-dropdown>
+                <button class="link hover:font-bold hover:text-red-400" data-dropdown-button>Women</button>
+                <div class="dropdown-menu absolute bg-white rounded-md flex flex-row text-black py-5 px-10 opacity-0 ">
+
+                    <!-- first column -->
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-red-400">Indian & Fusion Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtas</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtis, Tunics & tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Sarees</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Ethnic Wear</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Leggings & Churdidars</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skirts & Palazzos</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dress Materials</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Lehenga Cholis</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dupattas & Shawls</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-red-400"><a href="">Belts, Scarves & More</a> </li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- second column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-red-400">Western Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Dresses</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Tshirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jeans</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Trousers & Capris</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Co-ords</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Playsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jumpsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shrugs</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sweaters & Sweatshirtd</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets & Coats</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-3" >
+                            <ul>
+                                <li class="font-semibold text-red-400 "><a href="">Blazers & Waidtcoats</a> </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- third column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-red-400">Footwear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Flats</a></li>
+                                <li><a href="women.html"class="hover:font-semibold">Casyal Shoes</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Heels</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Boots</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sports Shoes & Floaters</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-red-400">Beauty and Personal Care</li>
+                                <li><a href="women.html" class="hover:font-semibold">Makeup </a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skincare</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Premium Beauty</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">LIpsticks</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Fragrances</a></li>
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Kids-->
+            <div class="dropdown relative" data-dropdown>
+                <button class="link hover:font-bold hover:text-purple-400" data-dropdown-button>Kids</button>
+                <div class="dropdown-menu absolute bg-white rounded-md flex flex-row text-black py-5 px-10 opacity-0 ">
+
+                    <!-- first column -->
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-purple-600">Indian & Fusion Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtas</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtis, Tunics & tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Sarees</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Ethnic Wear</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Leggings & Churdidars</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skirts & Palazzos</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dress Materials</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Lehenga Cholis</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dupattas & Shawls</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-purple-600"><a href="">Belts, Scarves & More</a> </li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- second column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-purple-600">Western Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Dresses</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Tshirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jeans</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Trousers & Capris</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Co-ords</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Playsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jumpsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shrugs</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sweaters & Sweatshirtd</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets & Coats</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-3" >
+                            <ul>
+                                <li class="font-semibold text-purple-600 "><a href="">Blazers & Waidtcoats</a> </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- third column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-purple-600">Footwear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Flats</a></li>
+                                <li><a href="women.html"class="hover:font-semibold">Casyal Shoes</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Heels</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Boots</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sports Shoes & Floaters</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-purple-600">Beauty and Personal Care</li>
+                                <li><a href="women.html" class="hover:font-semibold">Makeup </a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skincare</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Premium Beauty</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">LIpsticks</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Fragrances</a></li>
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- gadgets -->
+            <div class="dropdown relative" data-dropdown>
+                <button class="link hover:font-bold hover:text-emerald-400" data-dropdown-button>Gadgets</button>
+                <div class="dropdown-menu absolute bg-white rounded-md flex flex-row text-black py-5 px-10 opacity-0 ">
+
+                    <!-- first column -->
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-emerald-600">Indian & Fusion Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtas</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtis, Tunics & tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Sarees</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Ethnic Wear</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Leggings & Churdidars</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skirts & Palazzos</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dress Materials</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Lehenga Cholis</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dupattas & Shawls</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-emerald-600"><a href="">Belts, Scarves & More</a> </li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- second column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-emerald-600">Western Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Dresses</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Tshirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jeans</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Trousers & Capris</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Co-ords</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Playsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jumpsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shrugs</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sweaters & Sweatshirtd</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets & Coats</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-3" >
+                            <ul>
+                                <li class="font-semibold text-emerald-600 "><a href="">Blazers & Waidtcoats</a> </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- third column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-emerald-600">Footwear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Flats</a></li>
+                                <li><a href="women.html"class="hover:font-semibold">Casyal Shoes</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Heels</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Boots</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sports Shoes & Floaters</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-emerald-600">Beauty and Personal Care</li>
+                                <li><a href="women.html" class="hover:font-semibold">Makeup </a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skincare</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Premium Beauty</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">LIpsticks</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Fragrances</a></li>
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- new arrivals -->
+
+            <div class="dropdown relative" data-dropdown>
+                <button class="link hover:font-bold hover:text-yellow-500" data-dropdown-button>New Arrivals</button>
+                <div class="dropdown-menu absolute bg-white rounded-md flex flex-row text-black py-5 px-10 opacity-0 ">
+
+                    <!-- first column -->
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-yellow-600">Indian & Fusion Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtas</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Kurtis, Tunics & tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Sarees</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Ethnic Wear</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Leggings & Churdidars</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skirts & Palazzos</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dress Materials</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Lehenga Cholis</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Dupattas & Shawls</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-yellow-600"><a href="">Belts, Scarves & More</a> </li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- second column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-yellow-600">Western Wear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Dresses</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Tops</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Tshirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jeans</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Trousers & Capris</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Co-ords</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Playsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jumpsuits</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shrugs</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sweaters & Sweatshirtd</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Jackets & Coats</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-3" >
+                            <ul>
+                                <li class="font-semibold text-yellow-600 "><a href="">Blazers & Waidtcoats</a> </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- third column -->
+
+                    <div class="flex flex-col firstColumn">
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-yellow-600">Footwear</li>
+                                <li><a href="women.html" class="hover:font-semibold">Flats</a></li>
+                                <li><a href="women.html"class="hover:font-semibold">Casyal Shoes</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Heels</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Boots</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Sports Shoes & Floaters</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Shorts & Skirts</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="font-semibold text-yellow-600">Beauty and Personal Care</li>
+                                <li><a href="women.html" class="hover:font-semibold">Makeup </a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Skincare</a> </li>
+                                <li><a href="women.html" class="hover:font-semibold">Premium Beauty</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">LIpsticks</a></li>
+                                <li><a href="women.html" class="hover:font-semibold">Fragrances</a></li>
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- carousel -->
+
+    <section class="mt-5">
+        <div class="relative pictures">
+            <!-- images for sale -->
+            <ul id="slider">
+                <li class="relative">
+                    <img src="images/freestocks-_3Q3tsJ01nc-unsplash.jpg" alt="" class="pictures h-full w-full object-cover">
+
+                    <div class="absolute top-10 right-20">
+
+                        <h1 class="collections font-bold text-4xl">ALL NEW COLLECTIONS </h1>
+                        <h1 class="collections font-bold text-4xl">STARTING</h1>
+                        <h1 class="collections font-bold text-4xl ">AT 399 </h1>
+
+                        <form action="">
+                            <button class="shopNow rounded-md px-10 text-center ml-10 mt-10  border-2 border-black font-semibold pb-1 ">Shop Now</button>  
+                        </form>
+
+                    </div>
+                </li>
+
+                
+                <li class="relative hidden">
+                    <img src="images/top-div-jewellery.jpg" alt="" class="pictures h-full w-full object-cover">
+
+                </li>
+
+
+                <li class="relative hidden">
+                    <img src="images/nys.webp" alt="" class="pictures h-full w-full object-cover">
+                </li>
+            </ul>
+
+
+            <!-- buttons -->
+
+            <div class="flex absolute w-full h-full top-0 left-0 ">
+
+                <div class="my-auto flex w-full justify-between">
+
+                    <button onclick="prev()" class="bg-white bg-opacity-75 rounded-full p-3 ml-5 hover:opacity-80">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                          </svg>   
+                    </button>
+
+                    <button onclick="next()" class="bg-white bg-opacity-75 rounded-full p-3 mr-5 hover:opacity-80">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                          </svg>
+                          
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- top picks -->
+
+    <section class="mt-10 mb-10">
+
+        <div class="flex flex-col mb-8">
+
+            <div class="">
+                <h1 class="btnFont1 text-4xl ml-20 text-bold ">Top Picks</h1>
+            </div>
+
+        </div>
+
+        <div class="flex flex-row mt-5">
+
+            <div class="ml-5">
+
+                <div class="relative flex flex-col outlineTopPicks">
+                    <div>
+                        <img src="images/omer-haktan-bulut-W525htvQX2Y-unsplash.jpg" alt="" class="jackets ">
+                    </div>
+                    
+                    <div class="brand">
+                        
+                        <h1 class="offers  text-2xl text-center">Stylish picks</h1>
+                        <p class="text-center ">Min 50% Off</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="relative flex flex-col ml-8 outlineTopPicks">
+
+                <div class="relative flex flex-col ">
+                    <div>
+                        <img src="images/akhil-yerabati-Q2uV5TkjNz8-unsplash.jpg" alt="" class="gadgets ">
+                    </div>
+    
+                    <div class="flex flex-row">
+    
+                        <div>
+                            <img src="images/jewellery-small.jpg" alt="" class="earings">
+                        </div>
+    
+                        <div>
+                            <img src="images/jean-jacobs-RPVspeDIxXI-unsplash.jpg" alt="" class="shoes">
+                        </div>
+
+                   </div>
+
+                </div>
+
+                <div class="brand ">
+                    <h1 class="offers text-2xl text-center pl-2">Heels & Jewellery</h1>
+                    <p class="text-center pl-5">Min 30% Off</p>
+                </div>
+
+
+            </div>
+
+
+            <div class="ml-5">
+
+                <div class="relative flex flex-col outlineTopPicks">
+                    <div>
+                        <img src="images/kurthas.jpeg" alt="" class="jackets ">
+                    </div>
+                    
+                    <div class="brand">
+                        <h1 class="offers  text-2xl text-center ">Kurtas</h1>
+                        <p class="text-center ">Under 799</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ml-5">
+
+                <div class="relative flex flex-col outlineTopPicks">
+                    <div>
+                        <img src="images/louis-mornaud-ADvixEYm5qE-unsplash.jpg" alt="" class="jackets ">
+                    </div>
+                    
+                    <div class="brand">
+                        <h1 class="offers  text-2xl text-center ">Watches</h1>
+                        <p class="text-center ">Min 20% Off</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ml-5">
+
+                <div class="relative flex flex-col outlineTopPicks">
+                    <div>
+                        <img src="images/tyler-nix-6UEyVsw_1lU-unsplash.jpg" alt="" class="jackets ">
+                    </div>
+                    
+                    <div class="brand">
+                        <h1 class="offers  text-2xl text-center">Trendy Jeans</h1>
+                        <p class="text-center ">Under 1299</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ml-5 mr-5">
+
+                <div class="relative flex flex-col outlineTopPicks">
+                    <div>
+                        <img src="images/trinh-minh-th-ScYGyGhA9HQ-unsplash.jpg" alt="" class="jackets ">
+                    </div>
+                    
+                    <div class="brand">
+                        <h1 class="offers  text-2xl text-center ">Accessories</h1>
+                        <p class="text-center">Min 50% Off</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+  <!-- Items using Cards -->
+
+    <section class="mt-10 mb-10">
+
+        <div class="">
+            <h1 class="btnFont1 text-4xl ml-20 text-bold mb-10">Based On Your Seach History</h1>
+        </div>
+
+        <div class="flex ">
+
+            <div class=" text-right my-auto ">
+                <button class="my-auto shadow-lg bg-gray-200 hover:bg-gray-300 rounded-full border border-gray-700" onclick="previous()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ">
+                        <path fill-rule="evenodd" d="M13.28 3.97a.75.75 0 010 1.06L6.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0zm6 0a.75.75 0 010 1.06L12.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                    </svg>    
+                </button>
+            </div>
+            <div id="scrollContainer" class="w-full flex flex-row overflow-hidden">
+
+                <ul id="scroll" class="w-full flex flex-row space-x-5 justify-between ">
+
+                    <li class="border-black border rounded-lg ">
+                        <div class="flex flex-col p-3 text-center" id="item1">
+                            <img src="images/shirt.webp" alt="" class="cardImage ">
+                            <div class="font-bold title" >OTUS</div>
+                            <p id="itemName">Mens Casual Wear</p>
+                            <div class="flex flex-row justify-center">
+                                <img src="images/rupee.svg" alt="" class="text-center h-3 w-3 mt-1.5">
+                                <h3 class="text-center">899 (20% off)</h3>
+                            </div>
+                            <div class="flex flex-row space-x-3 mt-2 justify-center">
+                                <button onclick="passvalues(item1)" class="px-8 py-1 rounded bg-amber-400 hover:bg-amber-500 border border-amber-600">Add to cart</button>
+                                <button class="wishSymbol border border-black rounded hover:bg-red-400" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pl-1 w-7 h-7 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>   
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- second item -->
+
+                    <li class="border-black border rounded-lg ">
+                        <div class="flex flex-col p-3 text-center" id="item2">
+                            <img src="images/engin-akyurt-TDOClniEwmI-unsplash.jpg" alt="" class="cardImage ">
+                            <div class="font-bold title" >H & M</div>
+                            <p id="itemName">Frocks</p>
+                            <div class="flex flex-row justify-center">
+                                <img src="images/rupee.svg" alt="" class="text-center h-3 w-3 mt-1.5">
+                                <h3 class="text-center">1299 (10% off)</h3>
+                            </div>
+                            <div class="flex flex-row space-x-3 mt-2 justify-center">
+                                <button onclick="passvalues(item2)" class="px-8 py-1 rounded bg-amber-400 hover:bg-amber-500 border border-amber-600">Add to cart</button>
+                                <button class="wishSymbol border border-black rounded hover:bg-red-400" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pl-1 w-7 h-7 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>   
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- third item -->
+
+                    <li class="border-black border rounded-lg ">
+                        <div class="flex flex-col p-3 text-center" id="item3">
+                            <img src="images/gogles.webp" alt="" class="cardImage ">
+                            <div class="font-bold title" >Oakey</div>
+                            <p id="itemName">Mens Casual Wear</p>
+                            <div class="flex flex-row justify-center">
+                                <img src="images/rupee.svg" alt="" class="text-center h-3 w-3 mt-1.5">
+                                <h3 class="text-center">6799 (30% off)</h3>
+                            </div>
+                            <div class="flex flex-row space-x-3 mt-2 justify-center">
+                                <button onclick="passvalues(item3)" class="px-8 py-1 rounded bg-amber-400 hover:bg-amber-500 border border-amber-600">Add to cart</button>
+                                <button class="wishSymbol border border-black rounded hover:bg-red-400" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pl-1 w-7 h-7 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>   
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- fourth item -->
+
+                    <li class="border-black border rounded-lg ">
+                        <div class="flex flex-col p-3 text-center" id="item4">
+                            <img src="images/kai-gabriel-2s3GhhJz2uY-unsplash.jpg" alt="" class="cardImage ">
+                            <div class="font-bold title" >Aurelia</div>
+                            <p id="itemName">Women's Jeans</p>
+                            <div class="flex flex-row justify-center">
+                                <img src="images/rupee.svg" alt="" class="text-center h-3 w-3 mt-1.5">
+                                <h3 class="text-center">1499 (30% off)</h3>
+                            </div>
+                            <div class="flex flex-row space-x-3 mt-2 justify-center">
+                                <button onclick="passvalues(item4)" class="px-8 py-1 rounded bg-amber-400 hover:bg-amber-500 border border-amber-600">Add to cart</button>
+                                <button class="wishSymbol border border-black rounded hover:bg-red-400" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pl-1 w-7 h-7 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>   
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- fifth item -->
+
+                    <li class="border-black border rounded-lg ">
+                        <div class="flex flex-col p-3 text-center" id="item5">
+                            <img src="images/kate-skumen-PJRabkuH3_Q-unsplash.jpg" alt="" class="cardImage ">
+                            <div class="font-bold title" >Levi</div>
+                            <p id="itemName">Fusion Wear</p>
+                            <div class="flex flex-row justify-center">
+                                <img src="images/rupee.svg" alt="" class="text-center h-3 w-3 mt-1.5">
+                                <h3 class="text-center">999 (20% off)</h3>
+                            </div>
+                            <div class="flex flex-row space-x-3 mt-2 justify-center">
+                                <button onclick="passvalues(item5)" class="px-8 py-1 rounded bg-amber-400 hover:bg-amber-500 border border-amber-600">Add to cart</button>
+                                <button class="wishSymbol border border-black rounded hover:bg-red-400" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pl-1 w-7 h-7 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>   
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- six item -->
+
+                    <li class="border-black border rounded-lg ">
+                        <div class="flex flex-col p-3 text-center" id="item6">
+                            <img src="images/suheyl-burak-p7I07kuPSyU-unsplash.jpg" alt="" class="cardImage ">
+                            <div class="font-bold title" >Allen Solly</div>
+                            <p id="itemName">Party Wear</p>
+                            <div class="flex flex-row justify-center">
+                                <img src="images/rupee.svg" alt="" class="text-center h-3 w-3 mt-1.5">
+                                <h3 class="text-center">1299 (40% off)</h3>
+                            </div>
+                            <div class="flex flex-row space-x-3 mt-2 justify-center">
+                                <button onclick="passvalues(item6)" class="px-8 py-1 rounded bg-amber-400 hover:bg-amber-500 border border-amber-600">Add to cart</button>
+                                <button class="wishSymbol border border-black rounded hover:bg-red-400" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pl-1 w-7 h-7 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>   
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- seven item -->
+
+                    <li class="border-black border rounded-lg ">
+                        <div class="flex flex-col p-3 text-center" id="item7">
+                            <img src="images/bulbul-ahmed-Z528f1BWM00-unsplash.jpg" alt="" class="cardImage ">
+                            <div class="font-bold title" >Karagiri</div>
+                            <p id="itemName">Women's sarees</p>
+                            <div class="flex flex-row justify-center">
+                                <img src="images/rupee.svg" alt="" class="text-center h-3 w-3 mt-1.5">
+                                <h3 class="text-center">2699 (20% off)</h3>
+                            </div>
+                            <div class="flex flex-row space-x-3 mt-2 justify-center">
+                                <button onclick="passvalues(item7)" class="px-8 py-1 rounded bg-amber-400 hover:bg-amber-500 border border-amber-600">Add to cart</button>
+                                <button class="wishSymbol border border-black rounded hover:bg-red-400" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pl-1 w-7 h-7 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>   
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- eigth item -->
+
+                    <li class="border-black border rounded-lg ">
+                        <div class="flex flex-col p-3 text-center" id="item8">
+                            <img src="images/kids wear.webp" alt="" class="cardImage ">
+                            <div class="font-bold title" >Nykaa</div>
+                            <p id="itemName">Kids Wear </p>
+                            <div class="flex flex-row justify-center">
+                                <img src="images/rupee.svg" alt="" class="text-center h-3 w-3 mt-1.5">
+                                <h3 class="text-center">599 (40% off)</h3>
+                            </div>
+                            <div class="flex flex-row space-x-3 mt-2 justify-center">
+                                <button onclick="passvalues(item8)" class="px-8 py-1 rounded bg-amber-400 hover:bg-amber-500 border border-amber-600">Add to cart</button>
+                                <button class="wishSymbol border border-black rounded hover:bg-red-400" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="pl-1 w-7 h-7 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>   
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div class="my-auto ">
+                <button class="my-auto  bg-gray-200 hover:bg-gray-300 rounded-full border border-gray-700 shadow-lg" onclick="nextCard()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ">
+                        <path fill-rule="evenodd" d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- new user -->
+
+    <div class="flex flex-col bg-zinc-100 py-3 items-center mb-10 ">
+
+        <form action="login.html">
+            <button class="newUser rounded  text-center h-6 text-semibold border-transparent bg-amber-400 hover:bg-amber-500 start-center">Sign in</button>  
+        </form>
+        <h2 class="mt-2">New Customer? <a href="login.html" class="newCustomer text-blue-400 ">Sign in here</a> </h2>
+    </div>
+
+    <!-- phoneImage -->
+
+    <div class="flex flex-row border">
+        <img src="images/davide-boscolo-gz9njd0zYbQ-unsplash.jpg" alt="" class="aloneImage w-9/12">
+        <div class="bg-lime-600 relative  space-y-4 flex justify-center flex-col pt-10 pl-5">
+                <h1 class="text-4xl text- font-bold deal text-white btnFont2 ">Big Deals on Electronics</h1>
+                <h1 class="text-2xl font-bold offSale text-white ">Extra 28% Off With Gst Invoice   +    Bulk discount</h1>
+                <h1 class="text-3xl font-semibold text-white btnFont1 ">Special price for pre-booking </h1>
+                <button class="px-5 py-1 bg-zinc-200 hover:bg-zinc-300 border-2 border-zinc-500 rounded shopNow2 ">Shop now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <footer class="webFooter bg-gray-800 w-full mt-10">
+
+        <div class="flex flex-col ">
+            <div class="flex flex-row space-x-20">
+
+                <div class="text-white">
+                    <h1 class="font-semibold">Online Shopping</h1>
+                    <ul>
+                        <li><a href="" class="hover:underline font-light">Men</a></li>
+                        <li><a href="" class="hover:underline font-light">Women</a></li>
+                        <li><a href="" class="hover:underline font-light">Kids</a></li>
+                        <li><a href="" class="hover:underline font-light">Moblies</a></li>
+                        <li><a href="" class="hover:underline font-light">Accessories</a></li>
+                    </ul>
+                </div>
+
+                <div class="text-white">
+                    <h1 class="font-semibold">Contact us on</h1>
+                    <ul>
+                        <li><a href="" class="hover:underline font-light">Twitter</a></li>
+                        <li><a href="" class="hover:underline font-light">Facebook</a></li>
+                        <li><a href="" class="hover:underline font-light">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="text-white">
+                    <h1 class="font-semibold">Customer Policies</h1>
+                    <ul>
+                        <li><a href="" class="hover:underline font-light">FAQ</a></li>
+                        <li><a href="" class="hover:underline font-light">T&C</a></li>
+                        <li><a href="" class="hover:underline font-light">Terms of Use</a></li>
+                        <li><a href="" class="hover:underline font-light">Shipping</a></li>
+                        <li><a href="" class="hover:underline font-light">Cancellation</a></li>
+                        <li><a href="" class="hover:underline font-light">Privacy Policies</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col">
+
+                    <div class="flex flex-row pt-10">
+
+                        <img src="images/Untitled design.svg" alt="" class="h-12 w-12">
+                        <h1 class="text-white pt-3"><strong>100% ORIGINAL</strong> products</h1>
+
+                    </div>
+
+                    <div class="flex flex-row">
+
+                        <img src="images/rePolicy.svg" alt="" class="h-12 w-12">
+                        <h1 class="text-white pt-3"><strong>Return within 30 days</strong> of receiving your orders</h1>
+
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col mt-10">
+
+                    <h1 class="font-semibold text-2xl text-white">Download our app from</h1>
+    
+                    <div class="flex flex-row">
+                        <img src="images/googlestore.png" alt="" class="googlePlay">
+                        <img src="images/apps.png" alt="" class="apps mt-3">
+                    </div>
+    
+    
+    
+                </div>
+
+
+            </div>
+
+
+            <div class="copyRight">
+                <p class="text-white font-light text-xs text-center">&#169 2023 www.StyleFit.com. All rights reserved  </p>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+
+
+
+
+    <script src="app.js" defer></script>
+</body>
+</html>
